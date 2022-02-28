@@ -7,3 +7,6 @@ set(CMAKE_CXX_STANDARD 14)
 #        leetcode/leetcode-m1707.cpp leetcode/leetcode-m1708.cpp)
 add_executable(acm acm.cpp)
 
+
+add_executable(leetcode-42 leetcode/leetcode-42.cpp)
+add_executable(leetcode-704 leetcode/leetcode-704.cpp)
