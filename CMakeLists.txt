@@ -10,3 +10,6 @@ add_executable(acm acm.cpp)
 
 add_executable(leetcode-42 leetcode/leetcode-42.cpp)
 add_executable(leetcode-704 leetcode/leetcode-704.cpp)
+add_executable(leetcode-6 leetcode/leetcode-6.cpp)
+add_executable(leetcode-94 leetcode/leetcode-94.cpp)
+add_executable(leetcode-232 leetcode/leetcode-232.cpp)
