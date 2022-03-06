@@ -1,60 +1,32 @@
-#include "algorithm"
-#include "iostream"
+#include "bits/stdc++.h"
 
 using namespace std;
 
-template<typename T>
-class shared_p {
-private:
-    unsigned int *count;
-    T *ptr;
+inline int gcd(int a, int b) {
+    return b > 0 ? gcd(b, a % b) : a;
+}
+
+inline int lcm(int a, int b) {
+    return a / gcd(a, b) * b;
+}
+
+class Solution {
 public:
-    shared_p(T *p) : ptr(p), count(new unsigned int(1)) {}
-
-    shared_p(const shared_p<T> &p) : ptr(p.ptr), count(p.count) {
-        (*count)++;
-    }
-
-    shared_p(const T *p) : ptr(p), count(new unsigned int(1)) {}
-
-    ~shared_p() {
-        if (count != nullptr && --(*count) == 0) {
-            delete count;
-            delete ptr;
+    vector<int> replaceNonCoprimes(vector<int> &nums) {
+        vector<int> ans;
+        int n = nums.size();
+        if (n == 0) return ans;
+        int pre = nums[0];
+        for (int i = 1; i < n; i++) {
+            if (gcd(pre, nums[i]) != 1) {
+                pre = lcm(pre, nums[i]);
+            } else {
+                ans.push_back(pre);
+                pre = nums[i];
+            }
         }
-    }
+        ans.push_back(pre);
 
-    unsigned int getCount() {
-        return *(this->count);
-    }
-
-    shared_p<T> &operator=(const shared_p &p) {
-        if (this == &p)
-            return *this;
-        if (count != nullptr && --(*count) == 0) {
-            delete count;
-            delete ptr;
-        }
-        (*p.count)++;
-
-        ptr = p.ptr;
-        count = p.count;
-        return *this;
-    }
-
-    T &operator*() {
-        return *(this->ptr);
-    }
-
-    T *operator->() {
-        return this->ptr;
+        return ans;
     }
 };
-
-int main() {
-    shared_p<string> p1(new string("hellow shared_ptr"));
-    cout << p1.getCount() << endl;
-    shared_p<string> p2(p1);
-    cout << p1.getCount() << " " << p2.getCount() << endl;
-    return 0;
-}
