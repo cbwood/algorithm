@@ -1,2 +1,2 @@
-class Solution:
-    def cellsInRange(self, s: str) -> List[str]:
+p = ['P', 'Y', 'T', 'H']
+print(p[10:])
