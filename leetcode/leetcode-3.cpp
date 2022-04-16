@@ -11,6 +11,7 @@
 #include "string"
 #include "unordered_map"
 #include "vector"
+#include "iostream"
 using namespace std;
 
 class Solution {
@@ -20,13 +21,21 @@ public:
         unordered_map<int,int> ma;
         int l = 0, r= 0;
         int n = s.size();
-        while(r < n){
-            ma[s[r]-'a']++;
-            while(l < r && ma[s[r]-'a'] > 1){
-                ma[s[l]-'a']--;
+        while (r < n) {
+            ma[s[r] - 'a']++;
+            while (l < r && ma[s[r] - 'a'] > 1) {
+                ma[s[l] - 'a']--;
                 l++;
-            }ans = max(ans, r-l+1);
+            }
+            ans = max(ans, r - l + 1);
             r++;
-        }return ans;
+        }
+        return ans;
     }
 };
+
+int main() {
+    Solution so;
+    cout << so.lengthOfLongestSubstring("abcda");
+    return 0;
+}

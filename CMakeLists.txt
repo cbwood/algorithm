@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.22)
 project(algorithm)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -21,3 +21,7 @@ add_executable(offer2-011 leetcode/offer2-011.cpp)
 add_executable(ctrip interview/ctrip-1.cpp)
 add_executable(ctrip-2 interview/ctrip-2.cpp)
 add_executable(ctrip-3 interview/ctrip-3.cpp)
+add_executable(leetcode-3 leetcode/leetcode-3.cpp)
+add_executable(lccup-0 leetcode/lccup-0.cpp)
+add_executable(lccup-1 leetcode/lccup-1.cpp)
+add_executable(lccup-2 leetcode/lccup-2.cpp)

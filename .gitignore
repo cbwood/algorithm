@@ -36,3 +36,4 @@
 CMakeLists.txt
 cmake-build-*/
 /cmake-build-debug/
+test.py

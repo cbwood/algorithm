@@ -1,13 +1,6 @@
-a = list(map(int, input().split()))
-n, ans = a[0], a[1]
-s = input()
+import pickle
+from PIL import Image
 
-for x in s:
-    if x == 'U':
-        ans //= 2
-    elif x == 'L':
-        ans = ans * 2;
-    else:
-        ans *= 2
-
-print(ans)
+with open('D:/zh_dbp15k_link_img_dict_full.pkl', 'rb') as f:
+    da = f.readlines()
+    print(da[:6])
