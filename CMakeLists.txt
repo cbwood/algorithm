@@ -5,9 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 #add_executable(algorithm
 #        leetcode/leetcode-m1707.cpp leetcode/leetcode-m1708.cpp)
-file(GLOB APP_SOURCES *.cpp */*.cpp *.cc */*.cc)
-foreach (testsourcefile ${APP_SOURCES})
-    get_filename_component(testname ${testsourcefile} NAME_WE)
-    message("${testname}")
-    add_executable(${testname} ${testsourcefile})
-endforeach (testsourcefile ${APP_SOURCES})
+add_executable(offer2-014 leetcode/offer2-014.cc)
+add_executable(offer2-105 leetcode/offer2-015.cc)
+add_executable(offer2-016 leetcode/offer2-016.cc)
+add_executable(offer2-017 leetcode/offer2-017.cc)
