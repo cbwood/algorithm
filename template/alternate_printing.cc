@@ -55,5 +55,6 @@ class AlternatePrinting {
 int main() {
   AlternatePrinting a;
   a.start();
+
   return 0;
 }
